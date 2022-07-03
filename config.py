@@ -273,8 +273,8 @@ colors = init_colors()
 
 def init_widgets_defaults():
     return dict(font="Noto Sans",
-                fontsize=32,
-                padding=24,
+                fontsize=28,
+                padding=16,
                 background=colors[1])
 
 
@@ -329,7 +329,7 @@ def init_widgets_list():
         #),
         widget.GroupBox(font="FontAwesome",
                         margin_y=2,
-                        margin_x=32,
+                        margin_x=8,
                         padding_y=6,
                         padding_x=4,
                         borderwidth=0,
@@ -440,7 +440,7 @@ def init_widgets_list_2():
         #),
         widget.GroupBox(font="FontAwesome",
                         margin_y=2,
-                        margin_x=32,
+                        margin_x=8,
                         padding_y=6,
                         padding_x=4,
                         borderwidth=0,
@@ -462,7 +462,7 @@ def init_widgets_list_2():
             icon_size=32,
         ),
         widget.Spacer(
-            length=24,
+            length=12,
         ),
     ]
     return widgets_list_2
@@ -482,8 +482,8 @@ widgets_screen1 = init_widgets_screen1()
 widgets_screen2 = init_widgets_screen2()
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=64, opacity=0.8)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=64, opacity=0.8))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=48, opacity=0.8)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=48, opacity=0.8))]
 screens = init_screens()
 
 

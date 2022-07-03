@@ -125,6 +125,11 @@ super + r
 
 super + s
     flatpak run com.spotify.Client
+
+#Timetracking
+super + t
+    flatpak run com.toggl.TogglDesktop
+
 #Pavucontrol
 super + v
     pavucontrol

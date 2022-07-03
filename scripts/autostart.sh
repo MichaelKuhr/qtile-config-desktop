@@ -49,7 +49,7 @@ run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 run variety &
 run nm-applet &
 run pamac-tray &
-run wireplumber &
+#run wireplumber &
 #run xfce4-power-manager &
 #run flatpak run com.github.debauchee.barrier &
 run gummy start &
@@ -61,7 +61,8 @@ picom --config $HOME/.config/qtile/scripts/picom.conf &
 
 #starting user applications at boot time
 run volumeicon &
-run synergy &
+run flatpak run --command=barrierc com.github.debauchee.barrier --enable-drag-drop &
+#run synergy &
 #nitrogen --restore &
 #run caffeine -a &
 #run vivaldi-stable &
