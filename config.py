@@ -156,7 +156,6 @@ keys = [
 
 # TOGGLE FLOATING LAYOUT
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
-
     ]
 
 def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
@@ -179,6 +178,8 @@ keys.extend([
     # MOVE WINDOW TO NEXT SCREEN
     Key([mod,"shift"], "Right", lazy.function(window_to_next_screen, switch_screen=True)),
     Key([mod,"shift"], "Left", lazy.function(window_to_previous_screen, switch_screen=True)),
+    # SWITCH FOCUS TO NEXT SCREEN
+    Key([mod,"shift"], "a" , lazy.next_screen()),
 ])
 
 groups = []
@@ -196,8 +197,8 @@ group_labels = ["  ", "  ", "  ", "  ",
 #                "  ", "  ", "  ", "  ", "  ", "  ", ]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
-group_layouts = ["ratiotile", "tile", "ratiotile", "tile",
-                 "monadtall", "ratiotile", "tile", "max", "monadtall", "monadtall", ]
+group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall",
+                 "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", ]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
@@ -500,7 +501,7 @@ dgroups_key_binder = None
 dgroups_app_rules = [
     Rule(Match(title=["WhatsApp", ]), group="5"),
     Rule(Match(title=["Figma", "figma", "figma-linux", "Figma-Linux", ]), group="7"),
-    Rule(Match(wm_class=["Code", "code", "emacs" ]), group="2"),
+   # Rule(Match(wm_class=["Code", "code", "emacs" ]), group="2"),
     Rule(Match(wm_class=["firefoxdeveloperedition"]), group="3"),
     Rule(Match(wm_class=["Superproductivity", "superproductivity", "Morgen", "morgen"]), group="4"),
     Rule(Match(wm_class=["Telegram-Desktop", "Discord", "telegram-desktop", "discord", "whatsapp", "WhatsApp"]), group="5"),
@@ -536,7 +537,7 @@ def set_floating(window):
 floating_types = ["notification", "toolbar", "splash", "dialog"]
 
 
-follow_mouse_focus = False
+follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = True
 floating_layout = layout.Floating(float_rules=[
