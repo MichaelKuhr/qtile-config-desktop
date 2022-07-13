@@ -67,12 +67,11 @@ keys = [
 
 # SUPER + SHIFT KEYS
 
-    Key([mod, "shift"], "q", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
 
 
 # QTILE LAYOUT KEYS
-    Key([mod], "n", lazy.layout.normalize()),
+   # Key([mod], "n", lazy.layout.normalize()),
     Key([mod], "space", lazy.next_layout()),
 
 # CHANGE FOCUS
@@ -179,7 +178,7 @@ keys.extend([
     Key([mod,"shift"], "Right", lazy.function(window_to_next_screen, switch_screen=True)),
     Key([mod,"shift"], "Left", lazy.function(window_to_previous_screen, switch_screen=True)),
     # SWITCH FOCUS TO NEXT SCREEN
-    Key([mod,"shift"], "a" , lazy.next_screen()),
+    Key([mod,"shift"], "m" , lazy.next_screen()),
 ])
 
 groups = []
@@ -191,15 +190,15 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ]
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["  ", "  ", "  ", "  ",
-                "  ", "  ", "  ", "  ", "  ", "  ", ]
+group_labels = ["  ", "  ", "  ", "  ",
+                "  ", "  ", "  ", "  ", "  ", "  ", ]
 # group_labels = ["  ", "  ", "  ", "  ",
 #                "  ", "  ", "  ", "  ", "  ", "  ", ]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall",
+group_layouts = ["monadtall", "max", "monadtall", "monadtall",
                  "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", ]
-#group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
+#group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "max", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
     groups.append(
@@ -214,23 +213,19 @@ for i in groups:
 
 #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
-        Key([mod], "Tab", lazy.screen.next_group()),
-        Key([mod, "shift" ], "Tab", lazy.screen.prev_group()),
-        Key(["mod1"], "Tab", lazy.screen.next_group()),
-        Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
-
+        Key([mod], "Tab", lazy.next_screen()),
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
         #Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND FOLLOW MOVED WINDOW TO WORKSPACE
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
     ])
 
-
+# THEMING & COLORING FOR WINDOW BORDERS
 def init_layout_theme():
     return {"margin":6,
             "border_width":4,
-            "border_focus": "#5e81ac",
-            "border_normal": "#4c566a"
+            "border_focus": "#1fff48",
+            "border_normal": "#35aa68"
             }
 
 layout_theme = init_layout_theme()
@@ -255,6 +250,17 @@ layouts = [
 # COLORS FOR THE BAR
 #Theme name : ArcoLinux Default
 def init_colors():
+#    return [["#2F343F", "#2F343F"], # color 0
+#            ["#2F343F", "#2F343F"], # color 1
+#            ["#c0c5ce", "#c0c5ce"], # color 2
+#            ["#fba922", "#fba922"], # color 3
+#            ["#3384d0", "#3384d0"], # color 4
+#            ["#f3f4f5", "#f3f4f5"], # color 5
+#            ["#cd1f3f", "#cd1f3f"], # color 6
+#            ["#62FF00", "#62FF00"], # color 7
+#            ["#6790eb", "#6790eb"], # color 8
+#            ["#a9a9a9", "#a9a9a9"]] # color 9
+
     return [["#2F343F", "#2F343F"], # color 0
             ["#2F343F", "#2F343F"], # color 1
             ["#c0c5ce", "#c0c5ce"], # color 2
@@ -265,7 +271,6 @@ def init_colors():
             ["#62FF00", "#62FF00"], # color 7
             ["#6790eb", "#6790eb"], # color 8
             ["#a9a9a9", "#a9a9a9"]] # color 9
-
 
 colors = init_colors()
 
@@ -499,12 +504,12 @@ mouse = [
 ]
 dgroups_key_binder = None
 dgroups_app_rules = [
-    Rule(Match(title=["WhatsApp", ]), group="5"),
     Rule(Match(title=["Figma", "figma", "figma-linux", "Figma-Linux", ]), group="7"),
-   # Rule(Match(wm_class=["Code", "code", "emacs" ]), group="2"),
-    Rule(Match(wm_class=["firefoxdeveloperedition"]), group="3"),
+    Rule(Match(wm_class=["firefox"]), group="1"),
+    Rule(Match(wm_class=["Code", "code", "emacs" ]), group="2"),
+    Rule(Match(wm_class=["firefoxdeveloperedition", "github desktop", "devdocs-desktop"]), group="3"),
     Rule(Match(wm_class=["Superproductivity", "superproductivity", "Morgen", "morgen"]), group="4"),
-    Rule(Match(wm_class=["Telegram-Desktop", "Discord", "telegram-desktop", "discord", "whatsapp", "WhatsApp"]), group="5"),
+    Rule(Match(wm_class=["ferdium", "Ferdium"]), group="5"),
     Rule(Match(wm_class=["Libreoffice", "libreoffice", "Obsidian", "obsidian", "DesktopEditors" ]), group="6"),
     Rule(Match(wm_class=["Inkscape", "Gimp", "Figma", "inkscape", "gimp", "figma", ]), group="7"),
     Rule(Match(wm_class=["spotify", "Spotify"]), group="8"),
@@ -550,7 +555,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
     Match(wm_class='Arcolinux-welcome-app.py'),
-    Match(wm_class='Archlinux-tweak-tool.py'),
+    #Match(wm_class='Archlinux-tweak-tool.py'),
     Match(wm_class='Arcolinux-calamares-tool.py'),
     Match(wm_class='confirm'),
     Match(wm_class='dialog'),
@@ -563,11 +568,11 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='Arandr'),
     Match(wm_class='feh'),
     Match(wm_class='Galculator'),
-    Match(wm_class='archlinux-logout'),
+    #Match(wm_class='archlinux-logout'),
     Match(wm_class='xfce4-terminal'),
 
 ],  fullscreen_border_width = 0, border_width = 0)
-auto_fullscreen = True
+auto_fullscreen = False
 
 focus_on_window_activation = "focus" # or smart
 

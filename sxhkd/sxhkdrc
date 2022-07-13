@@ -91,7 +91,7 @@ super + F10
 
 #Figma
 super + y
-    flatpak run io.github.Figma_Linux.figma_linux
+    figma
 
 #Gimp
 super + g
@@ -103,15 +103,18 @@ super + i
 
 #Morgen
 super + m
-    flatpak run org.ferdium.Ferdium
+    ferdium
 
 #Notes with Obsidian
 super + o
     obsidian
 
+super + shift + o
+    onlyoffice
+
 #OBS Studio
-#super + o 
-#    obs
+super + shift + s 
+    obs
 
 #Podcasts
 super + p
@@ -124,7 +127,7 @@ super + r
     galculator
 
 super + s
-    flatpak run com.spotify.Client
+    spotify 
 
 #Timetracking
 super + t
@@ -139,8 +142,8 @@ super + x
     archlinux-logout
 
 #Emoji-Picker
-super + period
-    emoji-picker
+#super + period
+#    emoji-picker
 
 #alacritty
 super + Return
@@ -322,8 +325,7 @@ ctrl + shift + Print
 
 #xfce4-terminal dropdown
 F12
-    flatpak run io.github.shiftey.Desktop
-
+    devdocs-desktop
 #################################################################
 #     MULTIMEDIA KEYS
 #################################################################
