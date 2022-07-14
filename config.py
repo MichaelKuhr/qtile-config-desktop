@@ -190,8 +190,8 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ]
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["  ", "  ", "  ", "  ",
-                "  ", "  ", "  ", "  ", "  ", "  ", ]
+#group_labels = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", ]
+group_labels = ["  ", " 3 ", "  ", " g  ", "  ", "  ", " 8 ", " 7 ", "  ", " ~ ", ]
 # group_labels = ["  ", "  ", "  ", "  ",
 #                "  ", "  ", "  ", "  ", "  ", "  ", ]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
@@ -333,7 +333,7 @@ def init_widgets_list():
         #    foreground=colors[5],
         #    background=colors[1]
         #),
-        widget.GroupBox(font="FontAwesome",
+        widget.GroupBox(font="dripicons-v2",
                         margin_y=2,
                         margin_x=8,
                         padding_y=6,
@@ -351,8 +351,12 @@ def init_widgets_list():
         widget.Spacer(
             length=bar.STRETCH,
         ),
+        widget.TextBox(
+            font="dripicons-v2",
+            text=""
+        ),
         widget.CPU(
-            format="CPU  {load_percent}%  @",
+            format="{freq_current}GHz    ",
             update_interval=1,
             padding=0,
         ),
@@ -444,7 +448,7 @@ def init_widgets_list_2():
         #    foreground=colors[5],
         #    background=colors[1]
         #),
-        widget.GroupBox(font="FontAwesome",
+        widget.GroupBox(font="dripicons-v2",
                         margin_y=2,
                         margin_x=8,
                         padding_y=6,
@@ -504,17 +508,19 @@ mouse = [
 ]
 dgroups_key_binder = None
 dgroups_app_rules = [
-    Rule(Match(title=["Figma", "figma", "figma-linux", "Figma-Linux", ]), group="7"),
-    Rule(Match(wm_class=["firefox"]), group="1"),
+    #Rule(Match(wm_class=["firefox"]), group="1"),
     Rule(Match(wm_class=["Code", "code", "emacs" ]), group="2"),
     Rule(Match(wm_class=["firefoxdeveloperedition", "github desktop", "devdocs-desktop"]), group="3"),
-    Rule(Match(wm_class=["Superproductivity", "superproductivity", "Morgen", "morgen"]), group="4"),
+    Rule(Match(wm_class=["Obsidian", "obsidian"]), group="4"),
     Rule(Match(wm_class=["ferdium", "Ferdium"]), group="5"),
-    Rule(Match(wm_class=["Libreoffice", "libreoffice", "Obsidian", "obsidian", "DesktopEditors" ]), group="6"),
-    Rule(Match(wm_class=["Inkscape", "Gimp", "Figma", "inkscape", "gimp", "figma", ]), group="7"),
-    Rule(Match(wm_class=["spotify", "Spotify"]), group="8"),
+    Rule(Match(wm_class=["Superproductivity", "superproductivity", "Morgen", "morgen"]), group="6"),
+    Rule(Match(wm_class=["Inkscape", "Gimp", "Figma", "inkscape", "gimp", "figma"]), group="7"),
+    Rule(Match(title=["Figma", "figma", "figma-linux", "Figma-Linux", ]), group="7"),
+    Rule(Match(wm_class=["Libreoffice", "libreoffice", "DesktopEditors"]), group="8"),
+    Rule(Match(wm_class=["spotify", "Spotify"]), group="9"),
+    #Rule(Match(wm_name=["spotify", "Spotify"]), group="9"),
     #Rule(Match(wm_name=["Spotify",]), group="8"),
-    Rule(Match(wm_class=["pamac-manager"]), group="0"),
+    Rule(Match(wm_class=["pamac-manager", "archlinux-tweak-tool"]), group="0"),
 ]
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME

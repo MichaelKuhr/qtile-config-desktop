@@ -77,10 +77,10 @@ run flatpak run --command=barrierc com.github.debauchee.barrier --enable-drag-dr
 run code &
 run firefox-developer-edition &
 run obsidian &
-run flatpak run io.github.shiftey.Desktop &
-run flatpak run org.ferdium.Ferdium &
+#run flatpak run io.github.shiftey.Desktop &
+#run flatpak run org.ferdium.Ferdium &
 run superproductivity &
-run flatpak run org.onlyoffice.desktopeditors &
+#run flatpak run org.onlyoffice.desktopeditors &
 run devdocs-desktop &
-run firefox &
+#run firefox &
 #run flatpak run com.spotify.Client &
