@@ -196,8 +196,8 @@ group_labels = ["  ", " 3 ", "  ", " g  ", "  ", "  ", " 8 ", " 7 ",
 #                "  ", "  ", "  ", "  ", "  ", "  ", ]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall",
-                 "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", ]
+group_layouts = ["ratiotile", "max", "monadtall", "ratiotile",
+                 "ratiotile", "monadtall", "max", "ratiotile", "monadtall", "monadtall", ]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "max", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
@@ -356,7 +356,7 @@ def init_widgets_list():
             text=""
         ),
         widget.CPU(
-            format="{freq_current}GHz    ",
+            format="{freq_current}GHz  @",
             update_interval=1,
             padding=0,
         ),
@@ -374,17 +374,12 @@ def init_widgets_list():
         #    foreground=colors[2],
         #    background=colors[1]
         #),
-        widget.Sep(
-            padding=10,
-            linewidth=2,
-            foreground=colors[2],
-            background=colors[1]
-        ),
-        widget.Clock(
-            foreground=colors[5],
-            background=colors[1],
-            format="%d.%m.%y  /  %H:%M"
-        ),
+        #widget.Sep(
+        #    padding=10,
+        #    linewidth=2,
+        #    foreground=colors[2],
+        #    background=colors[1]
+        #),
         widget.Sep(
             linewidth=2,
             foreground=colors[2],
@@ -403,6 +398,17 @@ def init_widgets_list():
             units='m',
             update_interval=10,
         ),
+        widget.Sep(
+            linewidth=2,
+            foreground=colors[2],
+            background=colors[1]
+        ),
+        widget.Clock(
+            foreground=colors[5],
+            background=colors[1],
+            format="%d.%m.%y  /  %H:%M"
+        ),
+        
     ]
     return widgets_list
 
@@ -512,12 +518,16 @@ dgroups_app_rules = [
     Rule(Match(wm_class=["Code", "code", "emacs" ]), group="2"),
     Rule(Match(wm_class=["firefoxdeveloperedition", "github desktop", "devdocs-desktop"]), group="3"),
     Rule(Match(wm_class=["Obsidian", "obsidian"]), group="4"),
-    Rule(Match(wm_class=["ferdium", "Ferdium"]), group="5"),
-    Rule(Match(wm_class=["Superproductivity", "superproductivity", "Morgen", "morgen"]), group="6"),
+    Rule(Match(wm_class=["ferdium", "Ferdium", "whatsapp-nativefier-d40211", "telegram-desktop", "discord", "zoom "]), group="5"),
+    Rule(Match(wm_class=["ticktick", "superproductivity", "Morgen", "morgen"]), group="6"),
     Rule(Match(wm_class=["Inkscape", "Gimp", "Figma", "inkscape", "gimp", "figma"]), group="7"),
     Rule(Match(title=["Figma", "figma", "figma-linux", "Figma-Linux", ]), group="7"),
     Rule(Match(wm_class=["Libreoffice", "libreoffice", "DesktopEditors"]), group="8"),
-    Rule(Match(wm_class=["spotify", "Spotify"]), group="9"),
+    #Rule(Match(wm_class=["spotify", "Spotify"]), group="9"),
+    #Rule(Match(title=["Spotify"]), group="9"),
+    #Rule(Match(net_wm_pid="4000"), group="9"),
+    #Rule(Match(wm_instance_class=["spotify"]), group="9"),
+    #Rule(Match(wid=["0x6800004"]), group="9"),
     #Rule(Match(wm_name=["spotify", "Spotify"]), group="9"),
     #Rule(Match(wm_name=["Spotify",]), group="8"),
     Rule(Match(wm_class=["pamac-manager", "archlinux-tweak-tool"]), group="0"),

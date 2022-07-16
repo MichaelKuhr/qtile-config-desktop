@@ -103,7 +103,7 @@ super + i
 
 #Morgen
 super + m
-    ferdium
+    morgen
 
 #Notes with Obsidian
 super + o
@@ -131,7 +131,7 @@ super + s
 
 #Timetracking
 super + t
-    flatpak run com.toggl.TogglDesktop
+    flatpak run com.ticktick.TickTick
 
 #Pavucontrol
 super + v

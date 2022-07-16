@@ -62,25 +62,15 @@ picom --config $HOME/.config/qtile/scripts/picom.conf &
 #starting user applications at boot time
 run volumeicon &
 run flatpak run --command=barrierc com.github.debauchee.barrier --enable-drag-drop &
-#run synergy &
-#nitrogen --restore &
-#run caffeine -a &
-#run vivaldi-stable &
-#run firefox &
-#run thunar &
-#run dropbox &
-#run insync start &
-#run spotify &
-#run atom &
-#run telegram-desktop &
-#run slimbookbattery --minimize &
 run code &
 run firefox-developer-edition &
 run obsidian &
-#run flatpak run io.github.shiftey.Desktop &
+run flatpak run io.github.shiftey.Desktop &
 #run flatpak run org.ferdium.Ferdium &
-run superproductivity &
+run whatsapp-nativefier &
+run telegram-desktop &
+run morgen &
 #run flatpak run org.onlyoffice.desktopeditors &
+run flatpak run com.ticktick.TickTick &
 run devdocs-desktop &
 #run firefox &
-#run flatpak run com.spotify.Client &
