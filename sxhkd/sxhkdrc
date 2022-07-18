@@ -113,8 +113,8 @@ super + shift + o
     onlyoffice
 
 #OBS Studio
-super + shift + s 
-    obs
+#super + shift + s 
+ #   obs
 
 #Podcasts
 super + p
@@ -324,8 +324,8 @@ ctrl + shift + Print
 #################################################################
 
 #xfce4-terminal dropdown
-F12
-    devdocs-desktop
+#qF12
+    #devdocs-desktop
 #################################################################
 #     MULTIMEDIA KEYS
 #################################################################

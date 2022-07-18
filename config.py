@@ -196,8 +196,8 @@ group_labels = ["  ", " 3 ", "  ", " g  ", "  ", "  ", " 8 ", " 7 ",
 #                "  ", "  ", "  ", "  ", "  ", "  ", ]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
-group_layouts = ["ratiotile", "max", "monadtall", "ratiotile",
-                 "ratiotile", "monadtall", "max", "ratiotile", "monadtall", "monadtall", ]
+group_layouts = ["ratiotile", "monadtall", "monadtall", "ratiotile",
+                 "ratiotile", "spiral", "max", "ratiotile", "monadtall", "monadtall", ]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "max", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
@@ -438,6 +438,12 @@ def init_widgets_list_2():
         widget.CurrentLayoutIcon(
             scale=0.45,
         ),
+        widget.CPUGraph (
+            
+        ),
+        #widget.NvidiaSensors(
+        #    format="{temp}°C {fan_speed}"
+        #),
         widget.Spacer(
             length=bar.STRETCH,
         ),

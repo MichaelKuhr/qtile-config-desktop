@@ -49,6 +49,7 @@ run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 run variety &
 run nm-applet &
 run pamac-tray &
+run nitrogen --restore &
 #run wireplumber &
 #run xfce4-power-manager &
 #run flatpak run com.github.debauchee.barrier &
@@ -62,15 +63,14 @@ picom --config $HOME/.config/qtile/scripts/picom.conf &
 #starting user applications at boot time
 run volumeicon &
 run flatpak run --command=barrierc com.github.debauchee.barrier --enable-drag-drop &
-run code &
 run firefox-developer-edition &
+run github &
 run obsidian &
-run flatpak run io.github.shiftey.Desktop &
 #run flatpak run org.ferdium.Ferdium &
 run whatsapp-nativefier &
 run telegram-desktop &
-run morgen &
 #run flatpak run org.onlyoffice.desktopeditors &
-run flatpak run com.ticktick.TickTick &
 run devdocs-desktop &
-#run firefox &
+#run firefox & 
+run ticktick &
+run code &
