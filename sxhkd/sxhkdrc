@@ -131,7 +131,8 @@ super + s
 
 #Timetracking
 super + t
-    flatpak run com.ticktick.TickTick
+    ticktick
+    #flatpak run com.ticktick.TickTick
 
 #Pavucontrol
 super + v

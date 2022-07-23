@@ -191,7 +191,7 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
 #group_labels = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", ]
-group_labels = ["  ", " 3 ", "  ", " g  ", "  ", "  ", " 8 ", " 7 ", "  ", " ~ ", ]
+group_labels = ["  ", " 3 ", "  ", " g  ", "  ", "  ", " 8 ", "  ", " 7 ", " ~ ", ]
 # group_labels = ["  ", "  ", "  ", "  ",
 #                "  ", "  ", "  ", "  ", "  ", "  ", ]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
@@ -240,9 +240,9 @@ layouts = [
     # layout.Floating(**layout_theme),
     layout.RatioTile(**layout_theme),
     layout.Max(**layout_theme),
-    layout.VerticalTile(**layout_theme),
+    #layout.VerticalTile(**layout_theme),
     layout.Spiral(**layout_theme),
-    layout.Stack(**layout_theme),
+    #layout.Stack(**layout_theme),
     layout.Tile(**layout_theme),
     # layout.Zoomy(**layout_theme)
 ]
@@ -528,7 +528,7 @@ dgroups_app_rules = [
     Rule(Match(wm_class=["ticktick", "superproductivity", "Morgen", "morgen"]), group="6"),
     Rule(Match(wm_class=["Inkscape", "Gimp", "Figma", "inkscape", "gimp", "figma"]), group="7"),
     Rule(Match(title=["Figma", "figma", "figma-linux", "Figma-Linux", ]), group="7"),
-    Rule(Match(wm_class=["Libreoffice", "libreoffice", "DesktopEditors"]), group="8"),
+    Rule(Match(wm_class=["Libreoffice", "libreoffice", "DesktopEditors"]), group="9"),
     #Rule(Match(wm_class=["spotify", "Spotify"]), group="9"),
     #Rule(Match(title=["Spotify"]), group="9"),
     #Rule(Match(net_wm_pid="4000"), group="9"),
