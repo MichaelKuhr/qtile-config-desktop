@@ -53,7 +53,7 @@ run nitrogen --restore &
 #run wireplumber &
 #run xfce4-power-manager &
 #run flatpak run com.github.debauchee.barrier &
-run gummy start &
+run gammy start &
 numlockx on &
 #blueberry-tray &
 picom --config $HOME/.config/qtile/scripts/picom.conf &
@@ -62,9 +62,9 @@ picom --config $HOME/.config/qtile/scripts/picom.conf &
 
 #starting user applications at boot time
 run volumeicon &
-run flatpak run --command=barrierc com.github.debauchee.barrier --enable-drag-drop &
+#run flatpak run --command=barrierc com.github.debauchee.barrier --enable-drag-drop &
 run firefox-developer-edition &
-run github &
+#run github &
 run obsidian &
 #run flatpak run org.ferdium.Ferdium &
 run whatsapp-nativefier &
@@ -72,5 +72,7 @@ run telegram-desktop &
 #run flatpak run org.onlyoffice.desktopeditors &
 run devdocs-desktop &
 #run firefox & 
-run ticktick &
+run superproductivity &
 run code &
+run morgen &
+run github-desktop &
